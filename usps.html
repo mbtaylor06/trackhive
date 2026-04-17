@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USPS Package Tracking — Track Any USPS Shipment | TrackHive</title>
+  <meta name="description" content="Track any USPS package for free. Enter your USPS tracking number to get live status, delivery estimate, and full scan history — no account needed.">
+  <meta name="keywords" content="USPS tracking, track USPS package, USPS tracking number, Priority Mail tracking, USPS shipment tracker, free USPS tracker">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="USPS Package Tracking — TrackHive">
+  <meta property="og:description" content="Track any USPS package for free. Enter your tracking number for live status, delivery estimate, and scan history — no account needed.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://trackhive.app/usps">
+  <meta property="og:site_name" content="TrackHive">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="USPS Package Tracking — TrackHive">
+  <meta name="twitter:description" content="Track any USPS package for free. Live status, delivery estimate, and scan history — no account needed.">
+
+  <link rel="canonical" href="https://trackhive.app/usps">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand:   { DEFAULT: '#1A54D6', 50: '#EEF3FD', 100: '#D4E1FA', 500: '#1A54D6', 600: '#1445B8', 700: '#0E3699' },
+            accent:  { DEFAULT: '#FF5A1F', 100: '#FFD9CC', 500: '#FF5A1F', 600: '#E84A10' },
+            surface: '#F4F7FE',
+            dark:    '#0C1527',
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "USPS Package Tracking — TrackHive",
+        "description": "Track any USPS package for free. Enter your USPS tracking number to get live status, delivery estimate, and full scan history — no account needed.",
+        "url": "https://trackhive.app/usps",
+        "isPartOf": { "@type": "WebSite", "name": "TrackHive", "url": "https://trackhive.app" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does USPS Priority Mail take?",
+            "acceptedAnswer": { "@type": "Answer", "text": "USPS Priority Mail typically delivers in 1–3 business days within the continental United States. Delivery to Alaska, Hawaii, US territories, and APO/FPO addresses may take longer. Priority Mail Express guarantees overnight or 2-day delivery with a money-back guarantee." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I find my USPS tracking number?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Your USPS tracking number is printed on your shipping receipt, on the label of the package, or in your shipping confirmation email. It is usually 20–22 digits long and begins with 9. For international packages, it may be a shorter alphanumeric code such as EA123456789US." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does 'In Transit, Arriving Late' mean on USPS tracking?",
+            "acceptedAnswer": { "@type": "Answer", "text": "'In Transit, Arriving Late' means your package is still moving through the USPS network but has been delayed beyond the original estimated delivery date. This can be caused by high package volume, weather events, or operational delays at a sorting facility. Your package is not lost — it will continue toward its destination." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I track a USPS package without a tracking number?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Unfortunately, there is no way to track a USPS package without a tracking number. If you are the recipient, ask the sender to provide the tracking number from their shipping receipt. If you are the sender and have lost the receipt, visit the post office where you mailed the package with your payment confirmation or ID." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does USPS hold packages for pickup?",
+            "acceptedAnswer": { "@type": "Answer", "text": "USPS holds packages at the post office for 15 calendar days after the first delivery attempt or after a notice is left. If the package is not picked up within that period, it will be returned to the sender. You can request a package hold or schedule redelivery on the USPS website." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why hasn't my USPS tracking updated in days?",
+            "acceptedAnswer": { "@type": "Answer", "text": "USPS tracking updates are generated when a package is scanned at a facility. If your tracking hasn't updated, the package may be between facilities where it is not scanned, there may be a delay at a sorting center, or there could be a scan oversight. Tracking typically updates at each major facility. If there is no update for more than 7 days, you can file a Missing Mail search request on the USPS website." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+
+    .hero-bg {
+      background:
+        radial-gradient(ellipse 80% 60% at 70% -10%, rgba(0,75,135,.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 15% 90%,  rgba(26,84,214,.07)  0%, transparent 55%),
+        #F4F7FE;
+    }
+
+    .shadow-card {
+      box-shadow:
+        0 1px 2px  rgba(12,21,39,.04),
+        0 4px 16px rgba(12,21,39,.07),
+        0 12px 40px rgba(26,84,214,.05);
+    }
+    .shadow-card-hover {
+      transition: transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s ease;
+    }
+    .shadow-card-hover:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 2px 4px  rgba(12,21,39,.05),
+        0 8px 24px rgba(12,21,39,.11),
+        0 20px 60px rgba(26,84,214,.09);
+    }
+
+    .hex { clip-path: polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%); }
+
+    .track-input:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(26,84,214,.18);
+      border-color: rgba(26,84,214,.3);
+    }
+
+    .grain::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: .025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .lift {
+      transition: transform .18s cubic-bezier(.34,1.56,.64,1), opacity .18s ease;
+    }
+    .lift:hover  { transform: translateY(-1px); }
+    .lift:active { transform: scale(.97); }
+
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform .22s ease; }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(8px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .fade-up { animation: fadeUp .28s ease both; }
+
+    ::-webkit-scrollbar { width:6px; }
+    ::-webkit-scrollbar-track { background:#F4F7FE; }
+    ::-webkit-scrollbar-thumb { background:#CBD5E1; border-radius:3px; }
+
+    #mobile-menu {
+      transition: opacity .2s ease, transform .2s ease;
+      opacity: 0;
+      transform: translateY(-6px);
+      pointer-events: none;
+    }
+    #mobile-menu.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body class="bg-surface text-dark antialiased">
+
+  <!-- Navigation -->
+  <header>
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100" aria-label="Main navigation">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-lg" aria-label="TrackHive — home">
+          <div class="w-10 h-10 hex bg-brand flex items-center justify-center" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M2 12L6 7.5L9.5 10.5L14 4" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="4" r="2" fill="white"/></svg>
+          </div>
+          <span class="font-display font-semibold text-xl text-dark tracking-tight">TrackHive</span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#track" class="text-sm font-medium text-gray-500 hover:text-brand transition-colors">Track</a>
+          <a href="index.html#bulk" class="text-sm font-medium text-gray-500 hover:text-brand transition-colors">Bulk Track</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-brand transition-colors cursor-default">
+              Carriers <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" class="transition-transform duration-150 group-hover:rotate-180"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-44 bg-white rounded-xl border border-gray-100 py-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50" style="box-shadow:0 4px 24px rgba(12,21,39,.10),0 1px 4px rgba(12,21,39,.06);">
+              <a href="usps.html"  class="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-700 hover:text-brand hover:bg-gray-50 transition-colors"><span class="w-8 h-5 rounded bg-[#004B87] flex items-center justify-center shrink-0"><span class="text-white text-[8px] font-black leading-none">USPS</span></span>USPS</a>
+              <a href="fedex.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-700 hover:text-brand hover:bg-gray-50 transition-colors"><span class="w-8 h-5 rounded overflow-hidden flex shrink-0"><span class="flex-1 bg-[#4D148C] flex items-center justify-center"><span class="text-white text-[7px] font-black">Fed</span></span><span class="flex-1 bg-[#FF6200] flex items-center justify-center"><span class="text-white text-[7px] font-black">Ex</span></span></span>FedEx</a>
+              <a href="ups.html"   class="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-700 hover:text-brand hover:bg-gray-50 transition-colors"><span class="w-8 h-5 rounded bg-[#351C15] flex items-center justify-center shrink-0"><span class="text-[#FFB500] text-[8px] font-black leading-none">UPS</span></span>UPS</a>
+              <a href="dhl.html"   class="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-700 hover:text-brand hover:bg-gray-50 transition-colors"><span class="w-8 h-5 rounded bg-[#FFCC00] flex items-center justify-center shrink-0"><span class="text-[#D40511] text-[8px] font-black leading-none">DHL</span></span>DHL</a>
+            </div>
+          </div>
+          <a href="#faq" class="text-sm font-medium text-gray-500 hover:text-brand transition-colors">FAQ</a>
+          <a href="#track" class="lift inline-flex items-center gap-1.5 bg-brand text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
+            Track Now <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M10.5 6.5L7.5 3.5M10.5 6.5L7.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <button id="menu-btn" class="md:hidden p-2 rounded-lg text-gray-500 hover:text-brand hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="menu-icon-open" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg id="menu-icon-close" width="20" height="20" viewBox="0 0 20 20" fill="none" class="hidden"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="md:hidden absolute w-full bg-white border-b border-gray-100 px-4 pb-4 pt-2 shadow-lg">
+        <nav class="flex flex-col gap-1">
+          <a href="#track" class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">Track Package</a>
+          <a href="index.html#bulk" class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">Bulk Track</a>
+          <p class="px-3 pt-2 pb-0.5 text-xs font-semibold text-gray-400 uppercase tracking-wider">Carriers</p>
+          <a href="usps.html"  class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">USPS</a>
+          <a href="fedex.html" class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">FedEx</a>
+          <a href="ups.html"   class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">UPS</a>
+          <a href="dhl.html"   class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">DHL</a>
+          <a href="#faq" class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">FAQ</a>
+          <a href="#track" class="mt-2 w-full text-center bg-brand text-white text-sm font-medium px-4 py-2.5 rounded-lg hover:bg-brand-600 transition-colors">Track Now</a>
+        </nav>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero / Track -->
+    <section class="hero-bg grain relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28" id="track" aria-labelledby="hero-heading">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+
+        <!-- Carrier badge -->
+        <div class="inline-flex items-center gap-2.5 mb-6">
+          <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-bold bg-[#004B87] text-white tracking-wide">USPS</span>
+          <span class="text-gray-400 text-sm font-medium">United States Postal Service</span>
+        </div>
+
+        <h1 id="hero-heading" class="font-display text-4xl md:text-[3.25rem] font-bold text-dark leading-[1.12] tracking-[-0.03em] mb-5">
+          Track a USPS Package
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-500 leading-[1.7] max-w-xl mx-auto mb-10">
+          Enter your USPS tracking number below for live status. Works with Priority Mail, First-Class, Express Mail, and all other USPS services.
+        </p>
+
+        <!-- Track form -->
+        <form id="track-form" class="bg-white rounded-2xl shadow-card p-3 flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto" role="search" aria-label="USPS package tracking">
+          <div class="flex-1 relative">
+            <label for="tracking-input" class="sr-only">USPS tracking number</label>
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="5" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 5V4a4 4 0 0 1 8 0v1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="10" r="1.5" fill="currentColor"/></svg>
+            </span>
+            <input
+              type="text"
+              id="tracking-input"
+              name="tracking"
+              placeholder="9400 1118 9922 3397 5573 18..."
+              class="track-input w-full pl-11 pr-4 py-3.5 rounded-xl bg-surface text-dark text-base placeholder-gray-400 border border-transparent transition-colors"
+              autocomplete="off"
+              spellcheck="false"
+              aria-describedby="carrier-hint"
+            >
+          </div>
+          <button type="submit" class="lift inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold text-base px-7 py-3.5 rounded-xl hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 whitespace-nowrap">
+            Track Package
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M13 8L9.5 4M13 8L9.5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <p id="carrier-hint" aria-live="polite" class="mt-3 text-sm text-gray-400 h-5 transition-all duration-200">
+          Enter your tracking number above
+        </p>
+
+        <div id="track-results" class="mt-6 max-w-2xl mx-auto text-left hidden"></div>
+
+        <!-- Trust note -->
+        <p class="mt-8 text-xs text-gray-400">Free to use &middot; No account required &middot; Opens official USPS tracking</p>
+      </div>
+    </section>
+
+    <!-- Tracking Number Formats -->
+    <section class="bg-white py-16 md:py-24" aria-labelledby="formats-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 id="formats-heading" class="font-display text-3xl md:text-4xl font-bold text-dark tracking-tight mb-4">
+            USPS Tracking Number Formats
+          </h2>
+          <p class="text-gray-500 text-lg max-w-2xl mx-auto">USPS uses different tracking number formats depending on the service. Here is how to identify yours.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+          <article class="bg-surface rounded-2xl p-6 border border-gray-100 shadow-card-hover">
+            <div class="flex items-center gap-2.5 mb-4">
+              <div class="w-10 h-10 bg-[#004B87] rounded-xl flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L2 6v6l7 4 7-4V6L9 2z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg text-dark">Priority Mail</h3>
+            </div>
+            <div class="bg-white rounded-xl px-4 py-3 mb-3 border border-gray-100">
+              <p class="text-[11px] text-gray-400 font-semibold uppercase tracking-wider mb-1.5">Example</p>
+              <code class="text-sm text-brand font-mono">9400 1118 9922 3397 5573 18</code>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">22-digit number starting with <strong class="text-gray-700">9400</strong>. Includes Delivery Confirmation and real-time scan events at every facility.</p>
+          </article>
+
+          <article class="bg-surface rounded-2xl p-6 border border-gray-100 shadow-card-hover">
+            <div class="flex items-center gap-2.5 mb-4">
+              <div class="w-10 h-10 bg-[#004B87] rounded-xl flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="white" stroke-width="1.5"/><path d="M9 5v4l2.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg text-dark">Priority Mail Express</h3>
+            </div>
+            <div class="bg-white rounded-xl px-4 py-3 mb-3 border border-gray-100">
+              <p class="text-[11px] text-gray-400 font-semibold uppercase tracking-wider mb-1.5">Example</p>
+              <code class="text-sm text-brand font-mono">9202 2901 4888 0000 0000 12</code>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">22-digit number starting with <strong class="text-gray-700">9202</strong>. Overnight or 2-day guaranteed delivery with money-back promise.</p>
+          </article>
+
+          <article class="bg-surface rounded-2xl p-6 border border-gray-100 shadow-card-hover">
+            <div class="flex items-center gap-2.5 mb-4">
+              <div class="w-10 h-10 bg-[#004B87] rounded-xl flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M3 5h8M3 13h6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg text-dark">Certified Mail</h3>
+            </div>
+            <div class="bg-white rounded-xl px-4 py-3 mb-3 border border-gray-100">
+              <p class="text-[11px] text-gray-400 font-semibold uppercase tracking-wider mb-1.5">Example</p>
+              <code class="text-sm text-brand font-mono">9205 5902 7541 1014 3346 71</code>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">22-digit number starting with <strong class="text-gray-700">9205</strong>. Provides proof of mailing and delivery with optional return receipt.</p>
+          </article>
+
+          <article class="bg-surface rounded-2xl p-6 border border-gray-100 shadow-card-hover">
+            <div class="flex items-center gap-2.5 mb-4">
+              <div class="w-10 h-10 bg-[#004B87] rounded-xl flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="white" stroke-width="1.5"/><path d="M6 8h6M6 11h4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg text-dark">USPS Retail Ground</h3>
+            </div>
+            <div class="bg-white rounded-xl px-4 py-3 mb-3 border border-gray-100">
+              <p class="text-[11px] text-gray-400 font-semibold uppercase tracking-wider mb-1.5">Example</p>
+              <code class="text-sm text-brand font-mono">9261 2901 0320 0000 0014 53</code>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">22-digit number starting with <strong class="text-gray-700">9261</strong> or <strong class="text-gray-700">9205</strong>. Ground shipping for packages not eligible for Priority Mail rates.</p>
+          </article>
+
+          <article class="bg-surface rounded-2xl p-6 border border-gray-100 shadow-card-hover">
+            <div class="flex items-center gap-2.5 mb-4">
+              <div class="w-10 h-10 bg-[#004B87] rounded-xl flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="white" stroke-width="1.5"/><path d="M6 9h6M9 6v6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg text-dark">Parcel Select</h3>
+            </div>
+            <div class="bg-white rounded-xl px-4 py-3 mb-3 border border-gray-100">
+              <p class="text-[11px] text-gray-400 font-semibold uppercase tracking-wider mb-1.5">Example</p>
+              <code class="text-sm text-brand font-mono">9274 8901 5000 0000 0019 38</code>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">22-digit number starting with <strong class="text-gray-700">9274</strong>. Used by retailers and bulk shippers for cost-effective ground delivery.</p>
+          </article>
+
+          <article class="bg-surface rounded-2xl p-6 border border-gray-100 shadow-card-hover">
+            <div class="flex items-center gap-2.5 mb-4">
+              <div class="w-10 h-10 bg-[#004B87] rounded-xl flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2a7 7 0 1 0 0 14A7 7 0 0 0 9 2zM2 9h14M9 2c-2 3-2 9 0 14M9 2c2 3 2 9 0 14" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg text-dark">International</h3>
+            </div>
+            <div class="bg-white rounded-xl px-4 py-3 mb-3 border border-gray-100">
+              <p class="text-[11px] text-gray-400 font-semibold uppercase tracking-wider mb-1.5">Example</p>
+              <code class="text-sm text-brand font-mono">EA 123 456 789 US</code>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">Two letters + 9 digits + <strong class="text-gray-700">US</strong>. Used for Priority Mail International, First-Class International, and Express International.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="bg-surface py-16 md:py-24" aria-labelledby="services-heading">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 id="services-heading" class="font-display text-3xl md:text-4xl font-bold text-dark tracking-tight mb-4">
+            USPS Shipping Services
+          </h2>
+          <p class="text-gray-500 text-lg">Every USPS service you can ship — and track — through TrackHive.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+          <article class="bg-white rounded-2xl p-6 border border-gray-100 shadow-card-hover">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L2 6v6l7 4 7-4V6L9 2z" stroke="#1A54D6" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg text-dark leading-tight">Priority Mail</h3>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">Delivers in <strong class="text-gray-700">1–3 business days</strong> to all 50 states. Includes free packaging, tracking, and $100 of insurance. Best for packages up to 70 lbs that need fast, reliable delivery.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl p-6 border border-gray-100 shadow-card-hover">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-9 h-9 bg-orange-50 rounded-xl flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#FF5A1F" stroke-width="1.5"/><path d="M9 5v4l2.5 2.5" stroke="#FF5A1F" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg text-dark leading-tight">Priority Mail Express</h3>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">USPS's fastest service — guaranteed <strong class="text-gray-700">overnight or 2-day</strong> delivery with a money-back guarantee. Delivery 365 days a year including holidays. Includes $100 of insurance.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl p-6 border border-gray-100 shadow-card-hover">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-9 h-9 bg-green-50 rounded-xl flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="5" width="14" height="9" rx="1.5" stroke="#16A34A" stroke-width="1.5"/><path d="M6 5V4a3 3 0 0 1 6 0v1" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg text-dark leading-tight">First-Class Package Service</h3>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">Affordable shipping for packages <strong class="text-gray-700">up to 15.99 oz</strong>. Delivers in 1–5 business days. The most cost-effective option for small, lightweight items like jewelry, accessories, or small parts.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl p-6 border border-gray-100 shadow-card-hover">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-9 h-9 bg-gray-100 rounded-xl flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 14l3-8h8l3 8H2z" stroke="#374151" stroke-width="1.5" stroke-linejoin="round"/><path d="M5 6V4.5a4 4 0 0 1 8 0V6" stroke="#374151" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg text-dark leading-tight">USPS Retail Ground</h3>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">Ground shipping for <strong class="text-gray-700">packages up to 70 lbs</strong>. Delivers in 2–8 business days. Good for heavier or bulkier items when speed is less critical and cost savings matter more.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl p-6 border border-gray-100 shadow-card-hover">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-9 h-9 bg-purple-50 rounded-xl flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="10" rx="1.5" stroke="#7C3AED" stroke-width="1.5"/><path d="M3 8h12" stroke="#7C3AED" stroke-width="1.5"/><path d="M6 4V2M12 4V2" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg text-dark leading-tight">Media Mail</h3>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">Deep discounts for <strong class="text-gray-700">books, DVDs, CDs, and educational materials</strong>. Delivers in 2–8 business days. Must contain only eligible media — USPS may inspect packages. Best for sellers shipping books.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl p-6 border border-gray-100 shadow-card-hover">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2a7 7 0 1 0 0 14A7 7 0 0 0 9 2zM2 9h14M9 2c-2 3-2 9 0 14M9 2c2 3 2 9 0 14" stroke="#1A54D6" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <h3 class="font-display font-semibold text-lg text-dark leading-tight">Priority Mail International</h3>
+            </div>
+            <p class="text-sm text-gray-500 leading-relaxed">International delivery to <strong class="text-gray-700">180+ countries</strong> in 6–10 business days. Includes tracking (availability varies by country), flat-rate options, and up to $200 of insurance for most items.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery Status Guide -->
+    <section class="bg-white py-16 md:py-24" aria-labelledby="status-heading">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 id="status-heading" class="font-display text-3xl md:text-4xl font-bold text-dark tracking-tight mb-4">
+            What Your USPS Tracking Status Means
+          </h2>
+          <p class="text-gray-500 text-lg">A plain-English guide to every status you might see on USPS tracking.</p>
+        </div>
+
+        <div class="space-y-3">
+
+          <div class="bg-surface rounded-2xl border border-gray-100 px-6 py-5 flex gap-4">
+            <div class="status-dot bg-gray-400 mt-1.5"></div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Pre-Shipment / Shipping Label Created</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">The sender has created a shipping label, but USPS has not yet received the package. Tracking won't update until the package is physically dropped off or picked up.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 px-6 py-5 flex gap-4">
+            <div class="status-dot bg-blue-400 mt-1.5"></div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Accepted at USPS Origin Facility</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">USPS has scanned and accepted your package at the originating post office or facility. This is the first scan event and confirms your package is in the USPS network.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 px-6 py-5 flex gap-4">
+            <div class="status-dot bg-blue-500 mt-1.5"></div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">In Transit to Next Facility</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Your package is moving through the USPS network between sorting facilities. You may see multiple "In Transit" updates as it passes through different hubs on its way to your delivery post office.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 px-6 py-5 flex gap-4">
+            <div class="status-dot bg-accent mt-1.5"></div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Out for Delivery</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Your package is on a mail carrier's vehicle and will be delivered today. Most out-for-delivery packages arrive by 8 PM local time, though rural routes may vary.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 px-6 py-5 flex gap-4">
+            <div class="status-dot bg-green-500 mt-1.5"></div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Delivered</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Your package has been delivered. The scan includes the delivery location (front door, mailbox, neighbor, etc.) and time. If you can't find it, check with household members or neighbors first.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 px-6 py-5 flex gap-4">
+            <div class="status-dot bg-purple-500 mt-1.5"></div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Available for Pickup</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Your package is being held at a post office for you to pick up. This happens when a delivery attempt failed and no secure location was available, or if you requested a hold. Bring a valid photo ID.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 px-6 py-5 flex gap-4">
+            <div class="status-dot bg-amber-500 mt-1.5"></div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Delivery Attempted — Notice Left</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">The carrier tried to deliver but couldn't complete it — often because a signature was required and no one was home, or the package was too large for the mailbox. A notice card should be left at your door.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 px-6 py-5 flex gap-4">
+            <div class="status-dot bg-red-500 mt-1.5"></div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Alert / Exception</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Something interrupted normal delivery — weather, an incorrect address, a damaged package, or a customs issue for international shipments. USPS will usually attempt to resolve exceptions automatically, but you may need to contact them if the status persists.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Bulk Tracking -->
+    <section class="bg-white py-16 md:py-24 relative overflow-hidden" id="bulk" aria-labelledby="bulk-heading">
+      <div class="absolute -right-40 top-0    w-96 h-96 bg-brand/5  rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute -left-40  bottom-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 bg-brand/10 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><rect x="1" y="3" width="7" height="8" rx="1" stroke="#1A54D6" stroke-width="1.2"/><path d="M4 1h6a1 1 0 0 1 1 1v8" stroke="#1A54D6" stroke-width="1.2" stroke-linecap="round"/></svg>
+              Bulk Tracking
+            </div>
+            <h2 id="bulk-heading" class="font-display text-3xl md:text-4xl font-bold text-dark tracking-tight mb-5">
+              Track 20 packages<br>in a single paste
+            </h2>
+            <p class="text-gray-500 text-lg leading-[1.7] mb-6">
+              Managing a stack of orders? Paste up to 20 tracking numbers — one per line — and see all statuses in one view. Mix USPS, FedEx, UPS, and DHL freely; we'll sort them out.
+            </p>
+            <ul class="space-y-3 mb-8" role="list">
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="#DCFCE7"/><path d="M5.5 9.5L7.5 11.5L12.5 6.5" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Mix USPS, FedEx, UPS, and DHL in one batch
+              </li>
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="#DCFCE7"/><path d="M5.5 9.5L7.5 11.5L12.5 6.5" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Carrier auto-detected for every number
+              </li>
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="#DCFCE7"/><path d="M5.5 9.5L7.5 11.5L12.5 6.5" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                One-click links to each carrier's live tracking page
+              </li>
+            </ul>
+            <a href="#bulk-form" class="lift inline-flex items-center gap-2 bg-brand text-white font-semibold px-6 py-3.5 rounded-xl hover:bg-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
+              Try Bulk Tracking
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M13 8L9.5 4M13 8L9.5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div id="bulk-form" class="bg-surface rounded-2xl shadow-card p-6">
+            <label for="bulk-input" class="block text-sm font-semibold text-dark mb-1">Bulk Track Packages</label>
+            <p class="text-xs text-gray-400 mb-3" id="bulk-desc">One tracking number per line &mdash; up to 20</p>
+            <textarea id="bulk-input" aria-describedby="bulk-desc" placeholder="9400111899223397557318&#10;1Z999AA10123456784&#10;449044304137821&#10;7489572457..." rows="9" class="w-full px-4 py-3 bg-white rounded-xl text-sm text-dark placeholder-gray-400 border border-gray-200 hover:border-gray-300 focus:border-brand/40 focus:outline-none focus:ring-2 focus:ring-brand/15 resize-none font-mono leading-relaxed transition-colors" spellcheck="false"></textarea>
+            <button id="bulk-track-btn" class="lift mt-4 w-full inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-3.5 rounded-xl hover:bg-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
+              Track All Packages
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M13 8L9.5 4M13 8L9.5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div id="bulk-results" class="mt-4 space-y-2 hidden" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-surface py-16 md:py-24" id="faq" aria-labelledby="faq-heading">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 id="faq-heading" class="font-display text-3xl md:text-4xl font-bold text-dark tracking-tight mb-4">
+            USPS Tracking FAQ
+          </h2>
+          <p class="text-gray-500 text-lg">Common questions about tracking USPS packages.</p>
+        </div>
+
+        <div class="space-y-3">
+
+          <details class="bg-white rounded-2xl border border-gray-100 group">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none font-semibold text-dark hover:text-brand transition-colors list-none">
+              How long does USPS Priority Mail take?
+              <svg class="faq-chevron shrink-0 ml-4" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-gray-500 leading-[1.7]">USPS Priority Mail typically delivers in 1–3 business days within the continental United States. Delivery times to Alaska, Hawaii, US territories, and APO/FPO addresses may be longer. If you need a guaranteed delivery date, Priority Mail Express offers overnight or 2-day delivery with a money-back guarantee.</p>
+          </details>
+
+          <details class="bg-white rounded-2xl border border-gray-100 group">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none font-semibold text-dark hover:text-brand transition-colors list-none">
+              How do I find my USPS tracking number?
+              <svg class="faq-chevron shrink-0 ml-4" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-gray-500 leading-[1.7]">Your USPS tracking number appears on your shipping receipt, on the label affixed to the package, and in your shipping confirmation email. It is usually 20–22 digits long and starts with 9. For international shipments, look for a shorter alphanumeric code like EA123456789US. If you ordered from a retailer, check your order confirmation or account page — most retailers post the tracking number there once the package ships.</p>
+          </details>
+
+          <details class="bg-white rounded-2xl border border-gray-100 group">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none font-semibold text-dark hover:text-brand transition-colors list-none">
+              What does "In Transit, Arriving Late" mean?
+              <svg class="faq-chevron shrink-0 ml-4" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-gray-500 leading-[1.7]">"In Transit, Arriving Late" means your package is still moving through the USPS network but has been delayed beyond the original estimated delivery date. Common causes include high package volume during holidays, severe weather, or operational delays at a sorting facility. Your package is not lost — it will continue toward its destination. If no update appears for more than 7 days, you can submit a Missing Mail search at usps.com.</p>
+          </details>
+
+          <details class="bg-white rounded-2xl border border-gray-100 group">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none font-semibold text-dark hover:text-brand transition-colors list-none">
+              Can I track a USPS package without a tracking number?
+              <svg class="faq-chevron shrink-0 ml-4" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-gray-500 leading-[1.7]">Unfortunately, there is no way to track a USPS package without a tracking number — it is the only identifier USPS uses to locate a specific package in their system. If you are the recipient, ask the sender to share the tracking number from their shipping receipt. If you are the sender and lost the receipt, visit the post office where you mailed the package with your payment confirmation or ID and ask a clerk to look up the transaction.</p>
+          </details>
+
+          <details class="bg-white rounded-2xl border border-gray-100 group">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none font-semibold text-dark hover:text-brand transition-colors list-none">
+              How long does USPS hold packages for pickup?
+              <svg class="faq-chevron shrink-0 ml-4" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-gray-500 leading-[1.7]">USPS holds packages at the post office for <strong>15 calendar days</strong> after the first delivery attempt or after a notice is left. If the package is not picked up within that period, it will be returned to the sender. You can reschedule redelivery for free through the USPS website or by calling 1-800-275-8777. Bring a valid government-issued photo ID when picking up.</p>
+          </details>
+
+          <details class="bg-white rounded-2xl border border-gray-100 group">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none font-semibold text-dark hover:text-brand transition-colors list-none">
+              Why hasn't my USPS tracking updated in days?
+              <svg class="faq-chevron shrink-0 ml-4" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-gray-500 leading-[1.7]">USPS tracking updates are generated each time your package is scanned at a facility. Gaps in updates are common — your package may be traveling a long stretch between facilities where it isn't scanned, or there may be a processing delay at a hub. Tracking can sometimes go 2–3 days without updating on cross-country shipments. If there is no update for more than 7 business days, you can file a Missing Mail search request on the USPS website. For Priority Mail Express with a guaranteed date that wasn't met, you may be eligible for a refund.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Carriers -->
+    <section class="bg-white py-16 md:py-20" aria-labelledby="other-carriers-heading">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <h2 id="other-carriers-heading" class="font-display text-2xl md:text-3xl font-bold text-dark tracking-tight mb-3">
+            Also track packages with
+          </h2>
+          <p class="text-gray-500">TrackHive supports all major carriers in one place.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+
+          <a href="fedex.html" class="bg-surface rounded-2xl border border-gray-100 p-6 flex flex-col items-center gap-3 text-center shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-2xl group">
+            <span class="w-16 h-10 rounded-xl overflow-hidden flex shrink-0">
+              <span class="flex-1 bg-[#4D148C] flex items-center justify-center"><span class="text-white text-xs font-black">Fed</span></span>
+              <span class="flex-1 bg-[#FF6200] flex items-center justify-center"><span class="text-white text-xs font-black">Ex</span></span>
+            </span>
+            <span class="font-display font-semibold text-lg text-dark group-hover:text-brand transition-colors">FedEx</span>
+            <span class="text-sm text-gray-500 leading-relaxed">Express, Ground, Home Delivery, SmartPost</span>
+            <span class="inline-flex items-center gap-1 text-sm font-medium text-brand mt-auto">Track FedEx <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 9.5L9.5 2.5M5 2.5H9.5V7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <a href="ups.html" class="bg-surface rounded-2xl border border-gray-100 p-6 flex flex-col items-center gap-3 text-center shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-2xl group">
+            <span class="w-16 h-10 rounded-xl bg-[#351C15] flex items-center justify-center shrink-0">
+              <span class="text-[#FFB500] text-sm font-black tracking-widest">UPS</span>
+            </span>
+            <span class="font-display font-semibold text-lg text-dark group-hover:text-brand transition-colors">UPS</span>
+            <span class="text-sm text-gray-500 leading-relaxed">Ground, 2-Day Air, Next Day Air, SurePost</span>
+            <span class="inline-flex items-center gap-1 text-sm font-medium text-brand mt-auto">Track UPS <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 9.5L9.5 2.5M5 2.5H9.5V7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <a href="dhl.html" class="bg-surface rounded-2xl border border-gray-100 p-6 flex flex-col items-center gap-3 text-center shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 rounded-2xl group">
+            <span class="w-16 h-10 rounded-xl bg-[#FFCC00] flex items-center justify-center shrink-0">
+              <span class="text-[#D40511] text-sm font-black tracking-widest">DHL</span>
+            </span>
+            <span class="font-display font-semibold text-lg text-dark group-hover:text-brand transition-colors">DHL</span>
+            <span class="text-sm text-gray-500 leading-relaxed">Express, eCommerce, Freight, International</span>
+            <span class="inline-flex items-center gap-1 text-sm font-medium text-brand mt-auto">Track DHL <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 9.5L9.5 2.5M5 2.5H9.5V7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-gray-400 pt-12 pb-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-white/10">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2.5 mb-4">
+            <div class="w-10 h-10 hex bg-brand flex items-center justify-center" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M2 12L6 7.5L9.5 10.5L14 4" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="4" r="2" fill="white"/></svg>
+            </div>
+            <span class="font-display font-semibold text-xl text-white">TrackHive</span>
+          </div>
+          <p class="text-gray-400 leading-relaxed text-sm max-w-xs">Free package tracking for USPS, FedEx, UPS, and DHL. Track single or bulk shipments instantly — no account required.</p>
+        </div>
+        <nav aria-label="Track packages">
+          <h3 class="text-white font-semibold text-sm mb-4">Track Packages</h3>
+          <ul class="space-y-2.5">
+            <li><a href="usps.html"      class="text-sm hover:text-white transition-colors">Track USPS Package</a></li>
+            <li><a href="fedex.html"     class="text-sm hover:text-white transition-colors">Track FedEx Package</a></li>
+            <li><a href="ups.html"       class="text-sm hover:text-white transition-colors">Track UPS Package</a></li>
+            <li><a href="dhl.html"       class="text-sm hover:text-white transition-colors">Track DHL Package</a></li>
+            <li><a href="index.html#bulk" class="text-sm hover:text-white transition-colors">Bulk Track Packages</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Resources">
+          <h3 class="text-white font-semibold text-sm mb-4">Resources</h3>
+          <ul class="space-y-2.5">
+            <li><a href="#faq"            class="text-sm hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="index.html"      class="text-sm hover:text-white transition-colors">All Carriers</a></li>
+            <li><a href="index.html#bulk" class="text-sm hover:text-white transition-colors">Bulk Tracking</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-8">
+        <p class="text-xs text-gray-500">&copy; 2024 TrackHive. All rights reserved.</p>
+        <p class="text-xs text-gray-500">TrackHive is not affiliated with USPS, FedEx, UPS, or DHL.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PAGE_CARRIER must be set before the shared tracking script -->
+  <script>const PAGE_CARRIER = 'usps';</script>
+  <script>
+    const CARRIERS = {
+      ups:   { name:'UPS',   badgeBg:'#351C15', badgeText:'#FFB500', detect: n => /^1Z[A-Z0-9]{16}$/i.test(n)||/^T\d{10}$/.test(n)||/^\d{9}$/.test(n), url: n=>`https://www.ups.com/track?tracknum=${n}` },
+      usps:  { name:'USPS',  badgeBg:'#004B87', badgeText:'#ffffff', detect: n => /^9[0-9]{19,21}$/.test(n)||/^[A-Z]{2}\d{9}US$/i.test(n)||/^(82|03|23)\d{8}$/.test(n), url: n=>`https://tools.usps.com/go/TrackConfirmAction?tLabels=${n}` },
+      fedex: { name:'FedEx', badgeBg:'#4D148C', badgeText:'#ffffff', detect: n => /^\d{12}$/.test(n)||/^\d{15}$/.test(n)||/^\d{20}$/.test(n)||/^\d{22}$/.test(n)||/^96\d{20}$/.test(n), url: n=>`https://www.fedex.com/fedextrack/?trknbr=${n}` },
+      dhl:   { name:'DHL',   badgeBg:'#FFCC00', badgeText:'#D40511', detect: n => /^\d{10,11}$/.test(n)||/^JD\d{18}$/.test(n)||/^[A-Z]{2}\d{9}[A-Z]{2}$/i.test(n), url: n=>`https://www.dhl.com/us-en/home/tracking/tracking-freight.html?submit=1&tracking-id=${n}` },
+    };
+    function detectCarrier(raw) {
+      const n = raw.replace(/[\s\-]/g,'').toUpperCase();
+      if (!n) return null;
+      for (const [key,c] of Object.entries(CARRIERS)) { if (c.detect(n)) return {...c,key,cleanNum:n}; }
+      return null;
+    }
+    function resultCard(raw, carrier, fallback) {
+      const clean = raw.replace(/[\s\-]/g,'').toUpperCase()||raw;
+      if (!carrier && !fallback) return `<div class="fade-up bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700 font-medium">Carrier not recognized for <code class="font-mono">${clean}</code> — check the number is complete.</div>`;
+      const c = carrier || fallback;
+      return `<div class="fade-up bg-white rounded-xl border border-gray-100 shadow-card overflow-hidden">
+        <div class="flex items-center justify-between px-5 py-4 gap-3">
+          <div class="flex items-center gap-3 min-w-0">
+            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold shrink-0" style="background:${c.badgeBg};color:${c.badgeText}">${c.name}</span>
+            <code class="text-sm font-mono text-gray-700 truncate">${clean}</code>
+          </div>
+          <a href="${c.url(clean)}" target="_blank" rel="noopener noreferrer" class="lift inline-flex items-center gap-1.5 bg-brand text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-brand-600 shrink-0">
+            Track <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 9.5L9.5 2.5M5 2.5H9.5V7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>`;
+    }
+    function loadingCard(cleanNum, carrier) {
+      return `<div class="fade-up bg-white rounded-xl border border-gray-100 shadow-card overflow-hidden">
+        <div class="px-5 py-4 flex items-center gap-3 border-b border-gray-100">
+          <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold shrink-0" style="background:${carrier.badgeBg};color:${carrier.badgeText}">${carrier.name}</span>
+          <code class="text-sm font-mono text-gray-700">${cleanNum}</code>
+          <span class="ml-auto text-xs text-gray-400 animate-pulse">Looking up tracking…</span>
+        </div>
+        <div class="px-5 py-5 space-y-3 animate-pulse">
+          <div class="h-6 bg-gray-100 rounded-lg w-2/3"></div>
+          <div class="h-4 bg-gray-100 rounded w-full"></div>
+          <div class="h-4 bg-gray-100 rounded w-3/4"></div>
+        </div>
+      </div>`;
+    }
+    function trackingCard(data, carrierObj) {
+      const SC = {
+        delivered:        { bg:'#DCFCE7', text:'#15803D', label:'Delivered' },
+        out_for_delivery: { bg:'#FEF9C3', text:'#B45309', label:'Out for Delivery' },
+        in_transit:       { bg:'#DBEAFE', text:'#1D4ED8', label:'In Transit' },
+        pre_shipment:     { bg:'#F3F4F6', text:'#374151', label:'Pre-Shipment' },
+        exception:        { bg:'#FEE2E2', text:'#B91C1C', label:'Exception / Alert' },
+      };
+      const sc = SC[data.statusCategory] || SC.in_transit;
+      const events = (data.events||[]).slice(0,10);
+      const eventsHTML = events.map((ev,i)=>`
+        <div class="flex gap-3 ${i<events.length-1?'pb-4':''}">
+          <div class="flex flex-col items-center shrink-0">
+            <div class="w-2.5 h-2.5 rounded-full mt-1 ${i===0?'bg-brand':'bg-gray-200'}"></div>
+            ${i<events.length-1?'<div class="w-px bg-gray-100 flex-1 mt-1"></div>':''}
+          </div>
+          <div class="pb-1 min-w-0">
+            <p class="text-sm font-medium text-dark leading-snug">${ev.description||''}</p>
+            ${ev.location?`<p class="text-xs text-gray-400 mt-0.5">${ev.location}</p>`:''}
+            ${ev.timestamp?`<p class="text-xs text-gray-400">${ev.timestamp}</p>`:''}
+          </div>
+        </div>`).join('');
+      return `<div class="fade-up bg-white rounded-xl border border-gray-100 shadow-card overflow-hidden">
+        <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between gap-3 flex-wrap">
+          <div class="flex items-center gap-3 min-w-0">
+            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold shrink-0" style="background:${carrierObj.badgeBg};color:${carrierObj.badgeText}">${carrierObj.name}</span>
+            <code class="text-sm font-mono text-gray-700 truncate">${data.trackingNumber}</code>
+          </div>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold shrink-0" style="background:${sc.bg};color:${sc.text}">${sc.label}</span>
+        </div>
+        <div class="px-5 py-4 border-b border-gray-100">
+          <p class="text-sm font-semibold text-dark">${data.summary||''}</p>
+          ${data.estimatedDelivery?`<p class="text-xs text-gray-400 mt-1">Estimated delivery: <span class="font-medium text-gray-600">${data.estimatedDelivery}</span></p>`:''}
+          ${data.service?`<p class="text-xs text-gray-400 mt-0.5">Service: ${data.service}</p>`:''}
+        </div>
+        ${eventsHTML?`<div class="px-5 py-4 max-h-72 overflow-y-auto">${eventsHTML}</div>`:''}
+        <div class="px-5 py-3 bg-gray-50 border-t border-gray-100">
+          <a href="${carrierObj.url(data.trackingNumber)}" target="_blank" rel="noopener noreferrer" class="text-xs text-brand hover:underline">View on ${carrierObj.name} website →</a>
+        </div>
+      </div>`;
+    }
+    function errorCard(message, cleanNum, carrierObj) {
+      return `<div class="fade-up bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3" role="alert">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="shrink-0 mt-0.5"><circle cx="9" cy="9" r="8" stroke="#DC2626" stroke-width="1.5"/><path d="M9 5v5M9 13h.01" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div>
+          <p class="text-sm font-semibold text-red-700">Tracking lookup failed</p>
+          <p class="text-xs text-red-500 mt-0.5">${message}</p>
+          ${carrierObj?`<a href="${carrierObj.url(cleanNum)}" target="_blank" rel="noopener noreferrer" class="text-xs text-brand hover:underline mt-1.5 inline-block">Try on ${carrierObj.name} website →</a>`:''}
+        </div>
+      </div>`;
+    }
+    const trackForm    = document.getElementById('track-form');
+    const trackInput   = document.getElementById('tracking-input');
+    const carrierHint  = document.getElementById('carrier-hint');
+    const trackResults = document.getElementById('track-results');
+    trackInput.addEventListener('input', () => {
+      const v = trackInput.value.trim();
+      if (!v) { carrierHint.textContent='Enter your tracking number above'; carrierHint.className='mt-3 text-sm text-gray-400 h-5'; return; }
+      const c = detectCarrier(v);
+      if (c) { carrierHint.textContent=`\u2713 Detected: ${c.name}`; carrierHint.className='mt-3 text-sm font-semibold text-brand h-5'; }
+      else if (v.replace(/[\s\-]/g,'').length>=8) { carrierHint.textContent='Carrier not yet recognized \u2014 keep typing or check the number'; carrierHint.className='mt-3 text-sm text-amber-500 h-5'; }
+      else { carrierHint.textContent='Enter your tracking number above'; carrierHint.className='mt-3 text-sm text-gray-400 h-5'; }
+    });
+    trackForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const v = trackInput.value.trim(); if (!v) return;
+      const clean = v.replace(/[\s\-]/g,'').toUpperCase();
+      const detected = detectCarrier(v);
+      const fallback = CARRIERS[PAGE_CARRIER];
+      const useCarrier = detected || {...fallback, key: PAGE_CARRIER, cleanNum: clean};
+      window.open(useCarrier.url(clean), '_blank', 'noopener,noreferrer');
+      trackResults.innerHTML = resultCard(v, detected, detected ? null : {...fallback, key: PAGE_CARRIER, cleanNum: clean});
+      trackResults.classList.remove('hidden');
+      trackResults.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+    // Mobile menu
+    const menuBtn=document.getElementById('menu-btn'),mobileMenu=document.getElementById('mobile-menu'),iconO=document.getElementById('menu-icon-open'),iconC=document.getElementById('menu-icon-close');
+    let open=false;
+    function toggleMenu(f){open=f!==undefined?f:!open;mobileMenu.classList.toggle('open',open);iconO.classList.toggle('hidden',open);iconC.classList.toggle('hidden',!open);menuBtn.setAttribute('aria-expanded',String(open));}
+    // Bulk tracking
+    const bulkBtn = document.getElementById('bulk-track-btn');
+    const bulkInput = document.getElementById('bulk-input');
+    const bulkResults = document.getElementById('bulk-results');
+    bulkBtn.addEventListener('click', () => {
+      const lines = bulkInput.value.split('\n').map(l=>l.trim()).filter(l=>l.replace(/[\s\-]/g,'').length>=6);
+      if (!lines.length) {
+        bulkResults.innerHTML='<p class="text-sm text-center text-red-500 py-2">Please enter at least one tracking number.</p>';
+        bulkResults.classList.remove('hidden'); return;
+      }
+      const batch = lines.slice(0,20);
+      const cards = batch.map(num => resultCard(num, detectCarrier(num), null)).join('');
+      const extra = lines.length>20 ? `<p class="text-xs text-amber-500 text-center pt-1">Showing first 20 of ${lines.length} numbers.</p>` : '';
+      bulkResults.innerHTML=`<p class="text-xs text-gray-400 font-medium pb-1">${batch.length} package${batch.length!==1?'s':''} found:</p>${cards}${extra}`;
+      bulkResults.classList.remove('hidden');
+    });
+
+    menuBtn.addEventListener('click',()=>toggleMenu());
+    mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&open)toggleMenu(false);});
+  </script>
+</body>
+</html>

@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPS Package Tracking — Track Any UPS Shipment | TrackHive</title>
+  <meta name="description" content="Track any UPS package for free. Enter your UPS tracking number for live status, estimated delivery, and full scan history — no account needed.">
+  <meta name="keywords" content="UPS tracking, track UPS package, UPS shipment tracking, 1Z tracking number, UPS Ground tracking, UPS Next Day Air, UPS SurePost, free UPS tracker">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="UPS Package Tracking — TrackHive">
+  <meta property="og:description" content="Track any UPS package for free. Live status, estimated delivery, and full scan history — no account needed.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://trackhive.app/ups">
+  <meta property="og:site_name" content="TrackHive">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UPS Package Tracking — TrackHive">
+  <meta name="twitter:description" content="Track any UPS package for free. Live status and full scan history — no account needed.">
+
+  <link rel="canonical" href="https://trackhive.app/ups">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand:   { DEFAULT: '#1A54D6', 50: '#EEF3FD', 100: '#D4E1FA', 500: '#1A54D6', 600: '#1445B8', 700: '#0E3699' },
+            accent:  { DEFAULT: '#FF5A1F', 100: '#FFD9CC', 500: '#FF5A1F', 600: '#E84A10' },
+            surface: '#F4F7FE',
+            dark:    '#0C1527',
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            sans:    ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "name": "UPS Package Tracking — TrackHive",
+        "description": "Track any UPS package for free. Enter your UPS tracking number for live status, estimated delivery, and full scan history.",
+        "url": "https://trackhive.app/ups",
+        "isPartOf": { "@type": "WebSite", "name": "TrackHive", "url": "https://trackhive.app" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "All UPS tracking numbers start with 1Z — what does it mean?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The '1Z' prefix is a UPS identifier that has been standard since the 1980s. The characters that follow encode the shipper account number (6 characters), the service level indicator (2 digits), a package identifier (8 digits), and a check digit. So 1Z999AA10123456784 tells UPS exactly who shipped it, which service was used, and uniquely identifies that parcel in their system." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does 'Out for Delivery' mean for UPS?",
+            "acceptedAnswer": { "@type": "Answer", "text": "'Out for Delivery' means your package has been loaded onto a UPS delivery vehicle and is actively on its route. UPS drivers typically complete their routes by end of business (around 7–9 PM), though most residential deliveries happen between 9 AM and 7 PM. You can use UPS My Choice to see a narrower delivery window." }
+          },
+          {
+            "@type": "Question",
+            "name": "My UPS package shows delivered but I didn't receive it — what should I do?",
+            "acceptedAnswer": { "@type": "Answer", "text": "First, check with neighbors, your building's mailroom, or any secondary delivery locations. UPS sometimes leaves packages in covered areas or with a neighbor. If still missing after 24 hours, file a claim at ups.com or call 1-800-742-5877. UPS will investigate and can often recover lost packages or initiate a claims process." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I change the delivery address on a UPS package?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, through UPS My Choice you can redirect a package to a different address, a UPS Access Point, or request a hold. The shipper must have enabled these options. Address changes sometimes incur a fee and are subject to UPS approval. Changes must be made before the package is out for delivery." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is UPS SurePost and how does it differ from regular UPS Ground?",
+            "acceptedAnswer": { "@type": "Answer", "text": "UPS SurePost is a hybrid service where UPS handles the bulk of the transit and then transfers the package to the United States Postal Service (USPS) for final-mile delivery. It's cheaper than UPS Ground and is popular with high-volume e-commerce shippers, but it typically adds 1–2 days to delivery time and leaves final-mile tracking to USPS." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does UPS hold a package at a UPS Access Point?",
+            "acceptedAnswer": { "@type": "Answer", "text": "UPS holds packages at Access Point locations for 7 calendar days. After that, the package is returned to the shipper. You'll receive notifications as the hold period nears its end. Some Access Point locations (like The UPS Store) may have different hours, so check the specific location's availability before visiting." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .hero-bg {
+      background:
+        radial-gradient(ellipse 80% 60% at 70% -10%, rgba(53,28,21,.10) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 15% 90%,  rgba(255,181,0,.07)  0%, transparent 55%),
+        #F4F7FE;
+    }
+    .shadow-card { box-shadow: 0 1px 2px rgba(12,21,39,.04), 0 4px 16px rgba(12,21,39,.07), 0 12px 40px rgba(26,84,214,.05); }
+    .shadow-card-hover { transition: transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s ease; }
+    .shadow-card-hover:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(12,21,39,.05), 0 8px 24px rgba(12,21,39,.11), 0 20px 60px rgba(26,84,214,.09); }
+    .hex { clip-path: polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%); }
+    .lift { transition: transform .18s cubic-bezier(.34,1.56,.64,1); }
+    .lift:hover { transform: translateY(-1px); }
+    .lift:active { transform: scale(.97); }
+    .track-input:focus { outline: none; box-shadow: 0 0 0 3px rgba(26,84,214,.18); border-color: rgba(26,84,214,.3); }
+    .grain::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: .025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform .22s ease; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+    .fade-up { animation: fadeUp .28s ease both; }
+    #mobile-menu { transition: opacity .2s ease, transform .2s ease; opacity:0; transform:translateY(-6px); pointer-events:none; }
+    #mobile-menu.open { opacity:1; transform:translateY(0); pointer-events:all; }
+    ::-webkit-scrollbar { width:6px; }
+    ::-webkit-scrollbar-track { background:#F4F7FE; }
+    ::-webkit-scrollbar-thumb { background:#CBD5E1; border-radius:3px; }
+    .status-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+    .step-line { position:absolute; left:5px; top:20px; bottom:-16px; width:2px; background:linear-gradient(to bottom, #351C15 0%, rgba(53,28,21,.1) 100%); }
+  </style>
+</head>
+<body class="bg-surface text-dark antialiased">
+
+  <!-- Navigation -->
+  <header>
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100" aria-label="Main navigation">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-lg" aria-label="TrackHive — home">
+          <div class="w-10 h-10 hex bg-brand flex items-center justify-center" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M2 12L6 7.5L9.5 10.5L14 4" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="4" r="2" fill="white"/></svg>
+          </div>
+          <span class="font-display font-semibold text-xl text-dark tracking-tight">TrackHive</span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#track" class="text-sm font-medium text-gray-500 hover:text-brand transition-colors">Track</a>
+          <a href="index.html#bulk" class="text-sm font-medium text-gray-500 hover:text-brand transition-colors">Bulk Track</a>
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-brand transition-colors cursor-default">
+              Carriers <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" class="transition-transform duration-150 group-hover:rotate-180"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-44 bg-white rounded-xl border border-gray-100 py-1.5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50" style="box-shadow:0 4px 24px rgba(12,21,39,.10),0 1px 4px rgba(12,21,39,.06);">
+              <a href="usps.html"  class="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-700 hover:text-brand hover:bg-gray-50 transition-colors"><span class="w-8 h-5 rounded bg-[#004B87] flex items-center justify-center shrink-0"><span class="text-white text-[8px] font-black leading-none">USPS</span></span>USPS</a>
+              <a href="fedex.html" class="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-700 hover:text-brand hover:bg-gray-50 transition-colors"><span class="w-8 h-5 rounded overflow-hidden flex shrink-0"><span class="flex-1 bg-[#4D148C] flex items-center justify-center"><span class="text-white text-[7px] font-black">Fed</span></span><span class="flex-1 bg-[#FF6200] flex items-center justify-center"><span class="text-white text-[7px] font-black">Ex</span></span></span>FedEx</a>
+              <a href="ups.html"   class="flex items-center gap-2.5 px-4 py-2.5 text-sm text-brand bg-brand/5 font-semibold transition-colors"><span class="w-8 h-5 rounded bg-[#351C15] flex items-center justify-center shrink-0"><span class="text-[#FFB500] text-[8px] font-black leading-none">UPS</span></span>UPS</a>
+              <a href="dhl.html"   class="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-700 hover:text-brand hover:bg-gray-50 transition-colors"><span class="w-8 h-5 rounded bg-[#FFCC00] flex items-center justify-center shrink-0"><span class="text-[#D40511] text-[8px] font-black leading-none">DHL</span></span>DHL</a>
+            </div>
+          </div>
+          <a href="#faq" class="text-sm font-medium text-gray-500 hover:text-brand transition-colors">FAQ</a>
+          <a href="#track" class="lift inline-flex items-center gap-1.5 bg-brand text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
+            Track Now <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M10.5 6.5L7.5 3.5M10.5 6.5L7.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <button id="menu-btn" class="md:hidden p-2 rounded-lg text-gray-500 hover:text-brand hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg id="menu-icon-open" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg id="menu-icon-close" width="20" height="20" viewBox="0 0 20 20" fill="none" class="hidden"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="md:hidden absolute w-full bg-white border-b border-gray-100 px-4 pb-4 pt-2 shadow-lg">
+        <nav class="flex flex-col gap-1">
+          <a href="#track" class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">Track Package</a>
+          <a href="index.html#bulk" class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">Bulk Track</a>
+          <p class="px-3 pt-2 pb-0.5 text-xs font-semibold text-gray-400 uppercase tracking-wider">Carriers</p>
+          <a href="usps.html"  class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">USPS</a>
+          <a href="fedex.html" class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">FedEx</a>
+          <a href="ups.html"   class="px-3 py-2.5 text-sm font-medium text-brand bg-brand/5 rounded-lg transition-colors">UPS</a>
+          <a href="dhl.html"   class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">DHL</a>
+          <a href="#faq" class="px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-brand hover:bg-gray-50 rounded-lg transition-colors">FAQ</a>
+          <a href="#track" class="mt-2 w-full text-center bg-brand text-white text-sm font-medium px-4 py-2.5 rounded-lg hover:bg-brand-600 transition-colors">Track Now</a>
+        </nav>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero / Track -->
+    <section class="hero-bg grain relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-28" id="track" aria-labelledby="hero-heading">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+
+        <!-- Carrier badge -->
+        <div class="inline-flex items-center gap-2.5 mb-6">
+          <span class="inline-flex items-center px-3 py-1.5 rounded-xl text-sm font-bold" style="background:#351C15;color:#FFB500;" aria-label="UPS carrier">UPS</span>
+          <span class="text-sm font-medium text-gray-400">United Parcel Service</span>
+        </div>
+
+        <h1 id="hero-heading" class="font-display text-4xl md:text-[3.5rem] font-bold text-dark leading-[1.12] tracking-[-0.03em] mb-5">
+          Track a UPS Package
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-500 leading-[1.7] max-w-xl mx-auto mb-10">
+          Enter your UPS tracking number below. All UPS tracking numbers start with <strong class="text-gray-700 font-semibold">1Z</strong>. Works with UPS Ground, 2&#8209;Day Air, Next Day Air, and all other UPS services.
+        </p>
+
+        <!-- Track form -->
+        <form id="track-form" class="bg-white rounded-2xl shadow-card p-3 flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto" role="search" aria-label="UPS package tracking">
+          <div class="flex-1 relative">
+            <label for="tracking-input" class="sr-only">UPS tracking number</label>
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="5" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M5 5V4a4 4 0 0 1 8 0v1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="10" r="1.5" fill="currentColor"/></svg>
+            </span>
+            <input
+              type="text"
+              id="tracking-input"
+              name="tracking"
+              placeholder="1Z 999 AA1 01 2345 6784"
+              class="track-input w-full pl-11 pr-4 py-3.5 rounded-xl bg-surface text-dark text-base placeholder-gray-400 border border-transparent transition-colors"
+              autocomplete="off"
+              spellcheck="false"
+              aria-describedby="carrier-hint"
+            >
+          </div>
+          <button type="submit" class="lift inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold text-base px-7 py-3.5 rounded-xl hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 whitespace-nowrap">
+            Track Package
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M13 8L9.5 4M13 8L9.5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <!-- Carrier hint -->
+        <p id="carrier-hint" aria-live="polite" class="mt-3 text-sm text-gray-400 h-5">
+          Enter your tracking number above
+        </p>
+
+        <!-- Results -->
+        <div id="track-results" class="mt-6 max-w-2xl mx-auto text-left hidden" aria-live="polite"></div>
+
+        <!-- Trust note -->
+        <p class="mt-10 text-xs text-gray-400">Free &middot; No account required &middot; Opens directly on UPS.com</p>
+      </div>
+    </section>
+
+    <!-- Tracking Number Formats -->
+    <section class="bg-white py-16 md:py-20" aria-labelledby="formats-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 id="formats-heading" class="font-display text-3xl md:text-4xl font-bold text-dark tracking-tight mb-4">
+            UPS Tracking Number Formats
+          </h2>
+          <p class="text-gray-500 text-lg max-w-md mx-auto">UPS uses a few distinct tracking number formats depending on the service used.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+
+          <!-- Standard UPS -->
+          <article class="bg-surface rounded-2xl border border-gray-100 p-6 shadow-card-hover">
+            <div class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold mb-4" style="background:#351C15;color:#FFB500;">Standard UPS</div>
+            <h3 class="font-display font-semibold text-lg text-dark mb-2">1Z Format</h3>
+            <p class="text-sm text-gray-500 leading-relaxed mb-4">Starts with <strong class="text-dark">1Z</strong>, followed by a 6-character shipper number, 2-digit service level, 8-digit package identifier, and 1 check digit. Total of 18 characters.</p>
+            <div class="bg-white rounded-xl p-3.5 border border-gray-100">
+              <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Example</p>
+              <code class="text-sm text-brand font-mono">1Z 999 AA1 01 2345 6784</code>
+            </div>
+          </article>
+
+          <!-- UPS Mail Innovations -->
+          <article class="bg-surface rounded-2xl border border-gray-100 p-6 shadow-card-hover">
+            <div class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold mb-4 bg-gray-100 text-gray-600">Mail Innovations</div>
+            <h3 class="font-display font-semibold text-lg text-dark mb-2">T + 10 Digits</h3>
+            <p class="text-sm text-gray-500 leading-relaxed mb-4">UPS Mail Innovations numbers start with a capital <strong class="text-dark">T</strong> followed by exactly 10 digits. Used for lightweight packages delivered via USPS for the final mile.</p>
+            <div class="bg-white rounded-xl p-3.5 border border-gray-100">
+              <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Example</p>
+              <code class="text-sm text-brand font-mono">T028 4521 308</code>
+            </div>
+          </article>
+
+          <!-- UPS SurePost -->
+          <article class="bg-surface rounded-2xl border border-gray-100 p-6 shadow-card-hover">
+            <div class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold mb-4 bg-gray-100 text-gray-600">SurePost</div>
+            <h3 class="font-display font-semibold text-lg text-dark mb-2">9-Digit Number</h3>
+            <p class="text-sm text-gray-500 leading-relaxed mb-4">UPS SurePost packages sometimes use a simple 9-digit numeric tracking number. Delivery is completed by USPS, so the number may also appear in USPS tracking once transferred.</p>
+            <div class="bg-white rounded-xl p-3.5 border border-gray-100">
+              <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-2">Example</p>
+              <code class="text-sm text-brand font-mono">123 456 789</code>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Key tip -->
+        <div class="bg-[#351C15]/5 border border-[#351C15]/10 rounded-2xl p-6 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background:#351C15;">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2v7M9 13v.5" stroke="#FFB500" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="9" r="7.5" stroke="#FFB500" stroke-width="1.5"/></svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-dark mb-1">All standard UPS tracking numbers begin with "1Z"</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">If your tracking number starts with 1Z, it is definitively a UPS shipment. The subsequent characters encode the shipper account, service type, and a unique package identifier — all readable by UPS's logistics systems for precise routing and delivery confirmation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="bg-surface py-16 md:py-20" aria-labelledby="services-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 id="services-heading" class="font-display text-3xl md:text-4xl font-bold text-dark tracking-tight mb-4">
+            UPS Shipping Services
+          </h2>
+          <p class="text-gray-500 text-lg">From same-day air to budget ground, UPS offers a service for every need.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+          <article class="bg-white rounded-2xl border border-gray-100 p-6 shadow-card-hover">
+            <div class="w-10 h-10 rounded-xl bg-[#351C15]/8 flex items-center justify-center mb-4" aria-hidden="true" style="background:rgba(53,28,21,.08)">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="12" height="12" rx="1.5" stroke="#351C15" stroke-width="1.6"/><path d="M6 6V5a4 4 0 0 1 8 0v1M14 10h4" stroke="#351C15" stroke-width="1.6" stroke-linecap="round"/><path d="M14 6h2a2 2 0 0 1 2 2v3" stroke="#351C15" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-base text-dark mb-1">UPS Ground</h3>
+            <p class="text-xs text-gray-400 mb-2">1–5 business days</p>
+            <p class="text-sm text-gray-500 leading-relaxed">Cost-effective ground delivery for non-urgent domestic shipments. Delivery windows depend on distance from origin to destination.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl border border-gray-100 p-6 shadow-card-hover">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" aria-hidden="true" style="background:rgba(53,28,21,.08)">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 10h16M2 10L6 6M2 10L6 14" stroke="#351C15" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="10" r="3" stroke="#351C15" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-base text-dark mb-1">UPS 2-Day Air</h3>
+            <p class="text-xs text-gray-400 mb-2">2 business days, guaranteed</p>
+            <p class="text-sm text-gray-500 leading-relaxed">Guaranteed delivery in 2 business days by end of day. Ideal for time-sensitive shipments where overnight pricing is prohibitive.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl border border-gray-100 p-6 shadow-card-hover">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" aria-hidden="true" style="background:rgba(53,28,21,.08)">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#351C15" stroke-width="1.6"/><path d="M10 5v5l3 3" stroke="#351C15" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-base text-dark mb-1">UPS Next Day Air Saver</h3>
+            <p class="text-xs text-gray-400 mb-2">Next business day, by end of day</p>
+            <p class="text-sm text-gray-500 leading-relaxed">Overnight delivery by the end of the next business day. A more affordable overnight option when morning delivery isn't required.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl border border-gray-100 p-6 shadow-card-hover">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" aria-hidden="true" style="background:rgba(53,28,21,.08)">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10L10 4L16 10" stroke="#351C15" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 4v12" stroke="#351C15" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-base text-dark mb-1">UPS Next Day Air</h3>
+            <p class="text-xs text-gray-400 mb-2">Next business day by 10:30 AM or noon</p>
+            <p class="text-sm text-gray-500 leading-relaxed">UPS's fastest domestic service. Packages arrive the next business day as early as 10:30 AM, depending on destination zip code.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl border border-gray-100 p-6 shadow-card-hover">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" aria-hidden="true" style="background:rgba(53,28,21,.08)">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="7" width="14" height="10" rx="1.5" stroke="#351C15" stroke-width="1.6"/><path d="M7 7V5.5a3 3 0 0 1 6 0V7" stroke="#351C15" stroke-width="1.6" stroke-linecap="round"/><path d="M8 12h4" stroke="#351C15" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-base text-dark mb-1">UPS 3 Day Select</h3>
+            <p class="text-xs text-gray-400 mb-2">3 business days, guaranteed</p>
+            <p class="text-sm text-gray-500 leading-relaxed">A reliable middle ground between Ground and 2-Day Air. Guaranteed delivery within 3 business days, ideal for the contiguous US.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl border border-gray-100 p-6 shadow-card-hover">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" aria-hidden="true" style="background:rgba(53,28,21,.08)">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#351C15" stroke-width="1.6"/><path d="M6 10c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="#351C15" stroke-width="1.5" stroke-linecap="round"/><path d="M2 10h4M14 10h4" stroke="#351C15" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-base text-dark mb-1">UPS Worldwide Express</h3>
+            <p class="text-xs text-gray-400 mb-2">International, next possible business day</p>
+            <p class="text-sm text-gray-500 leading-relaxed">International priority shipping with delivery as soon as the next business day. Includes customs clearance and door-to-door delivery in over 220 countries.</p>
+          </article>
+
+          <article class="bg-white rounded-2xl border border-gray-100 p-6 shadow-card-hover sm:col-span-2 lg:col-span-1">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-4" aria-hidden="true" style="background:rgba(53,28,21,.08)">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10h14M3 15h14M3 5h14" stroke="#351C15" stroke-width="1.5" stroke-linecap="round"/><circle cx="7" cy="10" r="1.5" fill="#351C15"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-base text-dark mb-1">UPS SurePost</h3>
+            <p class="text-xs text-gray-400 mb-2">Budget-friendly, last-mile via USPS</p>
+            <p class="text-sm text-gray-500 leading-relaxed">UPS handles the bulk transit and transfers to USPS for final-mile delivery. Excellent economics for high-volume e-commerce sellers shipping lightweight packages.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery Status Guide -->
+    <section class="bg-white py-16 md:py-20" aria-labelledby="status-heading">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 id="status-heading" class="font-display text-3xl md:text-4xl font-bold text-dark tracking-tight mb-4">
+            UPS Delivery Status Guide
+          </h2>
+          <p class="text-gray-500 text-lg">What each UPS tracking status actually means for your shipment.</p>
+        </div>
+
+        <div class="space-y-3">
+
+          <div class="bg-surface rounded-2xl border border-gray-100 p-5 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 bg-gray-100" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="4" width="12" height="11" rx="1.5" stroke="#6B7280" stroke-width="1.5"/><path d="M6 4V3a3 3 0 0 1 6 0v1M6 9h6M6 12h4" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Order Processed: Return to Shipper</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">The shipper has created a shipping label and transmitted order data to UPS, but UPS has not yet physically received the package. It's still at the shipper's facility.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 p-5 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" aria-hidden="true" style="background:rgba(53,28,21,.08)">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3v8M9 11l-3-3M9 11l3-3" stroke="#351C15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 14h12" stroke="#351C15" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Pickup Scan</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">UPS has physically collected the package. The first scan in the UPS network — from this point forward, real-time tracking updates will appear as the package moves through the network.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 p-5 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 bg-brand/8" aria-hidden="true" style="background:rgba(26,84,214,.08)">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9h14M9 3l7 6-7 6" stroke="#1A54D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">In Transit</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">Your package is moving through UPS's network of hubs and distribution centers. You'll see multiple scan events as it travels from facility to facility toward the delivery destination.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 p-5 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" aria-hidden="true" style="background:rgba(255,181,0,.12)">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M3 9L7 5M3 9L7 13" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="9" r="2" fill="#D97706"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Out for Delivery</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">The package has been loaded onto a UPS delivery vehicle. Expect delivery by end of business (typically 7–9 PM). UPS My Choice members can often track the driver's location in real time.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 p-5 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 bg-green-50" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#16A34A" stroke-width="1.5"/><path d="M5.5 9.5L7.5 11.5L12.5 6.5" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Delivered</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">The package has been successfully delivered. The scan includes the time, date, and delivery location (e.g., "Front Door" or "Receptionist Desk"). Proof of delivery is available on ups.com.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 p-5 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 bg-amber-50" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#D97706" stroke-width="1.5"/><path d="M9 5.5v5M9 13.5h.01" stroke="#D97706" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Delivery Attempt — No Access</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">UPS attempted delivery but could not complete it — common reasons include a locked gate, no signature available, or an inaccessible address. A UPS InfoNotice will be left with instructions for re-delivery or pickup.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 p-5 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 bg-red-50" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="#DC2626" stroke-width="1.5"/><path d="M6 6l6 6M12 6L6 12" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Exception / Delay</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">An unexpected event has disrupted normal transit — such as severe weather, a missed connection, a damaged label, or an address issue. UPS will typically provide an updated estimated delivery date.</p>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl border border-gray-100 p-5 flex items-start gap-5">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" aria-hidden="true" style="background:rgba(53,28,21,.08)">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="7" width="14" height="8" rx="1.5" stroke="#351C15" stroke-width="1.5"/><path d="M5 7V5.5a4 4 0 0 1 8 0V7M9 11v.5" stroke="#351C15" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-dark mb-1">Transferred to Post Office (SurePost)</h3>
+              <p class="text-sm text-gray-500 leading-relaxed">For UPS SurePost shipments, the package has been transferred to USPS for final-mile delivery. From this point, track using your USPS tracking number, which UPS provides alongside the original tracking details.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Bulk Tracking -->
+    <section class="bg-white py-16 md:py-24 relative overflow-hidden" id="bulk" aria-labelledby="bulk-heading">
+      <div class="absolute -right-40 top-0    w-96 h-96 bg-brand/5  rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute -left-40  bottom-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 bg-brand/10 text-brand text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><rect x="1" y="3" width="7" height="8" rx="1" stroke="#1A54D6" stroke-width="1.2"/><path d="M4 1h6a1 1 0 0 1 1 1v8" stroke="#1A54D6" stroke-width="1.2" stroke-linecap="round"/></svg>
+              Bulk Tracking
+            </div>
+            <h2 id="bulk-heading" class="font-display text-3xl md:text-4xl font-bold text-dark tracking-tight mb-5">
+              Track 20 packages<br>in a single paste
+            </h2>
+            <p class="text-gray-500 text-lg leading-[1.7] mb-6">
+              Managing a stack of orders? Paste up to 20 tracking numbers — one per line — and see all statuses in one view. Mix USPS, FedEx, UPS, and DHL freely; we'll sort them out.
+            </p>
+            <ul class="space-y-3 mb-8" role="list">
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="#DCFCE7"/><path d="M5.5 9.5L7.5 11.5L12.5 6.5" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Mix USPS, FedEx, UPS, and DHL in one batch
+              </li>
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="#DCFCE7"/><path d="M5.5 9.5L7.5 11.5L12.5 6.5" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Carrier auto-detected for every number
+              </li>
+              <li class="flex items-center gap-3 text-gray-600">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="#DCFCE7"/><path d="M5.5 9.5L7.5 11.5L12.5 6.5" stroke="#16A34A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                One-click links to each carrier's live tracking page
+              </li>
+            </ul>
+            <a href="#bulk-form" class="lift inline-flex items-center gap-2 bg-brand text-white font-semibold px-6 py-3.5 rounded-xl hover:bg-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
+              Try Bulk Tracking
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M13 8L9.5 4M13 8L9.5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div id="bulk-form" class="bg-surface rounded-2xl shadow-card p-6">
+            <label for="bulk-input" class="block text-sm font-semibold text-dark mb-1">Bulk Track Packages</label>
+            <p class="text-xs text-gray-400 mb-3" id="bulk-desc">One tracking number per line &mdash; up to 20</p>
+            <textarea id="bulk-input" aria-describedby="bulk-desc" placeholder="9400111899223397557318&#10;1Z999AA10123456784&#10;449044304137821&#10;7489572457..." rows="9" class="w-full px-4 py-3 bg-white rounded-xl text-sm text-dark placeholder-gray-400 border border-gray-200 hover:border-gray-300 focus:border-brand/40 focus:outline-none focus:ring-2 focus:ring-brand/15 resize-none font-mono leading-relaxed transition-colors" spellcheck="false"></textarea>
+            <button id="bulk-track-btn" class="lift mt-4 w-full inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-3.5 rounded-xl hover:bg-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2">
+              Track All Packages
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M13 8L9.5 4M13 8L9.5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div id="bulk-results" class="mt-4 space-y-2 hidden" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-surface py-16 md:py-24" id="faq" aria-labelledby="faq-heading">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 id="faq-heading" class="font-display text-3xl md:text-4xl font-bold text-dark tracking-tight mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p class="text-gray-500 text-lg">Common questions about UPS tracking and delivery.</p>
+        </div>
+
+        <div class="space-y-3" role="list">
+
+          <details class="bg-white rounded-2xl border border-gray-100 group" role="listitem">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none font-semibold text-dark hover:text-brand transition-colors list-none">
+              All UPS tracking numbers start with 1Z — what does it mean?
+              <svg class="faq-chevron shrink-0 ml-4" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-gray-500 leading-[1.7]">The "1Z" prefix is a UPS identifier standard since the 1980s. The characters that follow encode the shipper account number (6 characters), the service level indicator (2 digits), a package identifier (8 digits), and a check digit — all readable by UPS's logistics systems for precise routing and delivery confirmation. So a number like <code class="font-mono text-sm text-brand">1Z999AA10123456784</code> tells UPS exactly who shipped the package, which service was selected, and uniquely identifies that parcel in their global network.</p>
+          </details>
+
+          <details class="bg-white rounded-2xl border border-gray-100 group" role="listitem">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none font-semibold text-dark hover:text-brand transition-colors list-none">
+              What does "Out for Delivery" mean for UPS?
+              <svg class="faq-chevron shrink-0 ml-4" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-gray-500 leading-[1.7]">"Out for Delivery" means your package has been loaded onto a UPS delivery vehicle and is actively en route to you. UPS drivers typically complete their routes by end of business — usually 7–9 PM local time, though most residential deliveries happen between 9 AM and 7 PM. UPS My Choice members can often see a narrower 2-hour delivery window on the day of delivery.</p>
+          </details>
+
+          <details class="bg-white rounded-2xl border border-gray-100 group" role="listitem">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none font-semibold text-dark hover:text-brand transition-colors list-none">
+              My UPS package shows delivered but I didn't receive it — what should I do?
+              <svg class="faq-chevron shrink-0 ml-4" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-gray-500 leading-[1.7]">First, check with neighbors, your building's mailroom or front desk, and any secondary delivery locations around your address (porches, side doors, garages). UPS sometimes leaves packages in covered areas or with a neighbor for security. Check the delivery scan on ups.com — it often shows the exact location where the package was left. If still missing after 24 hours, file a claim at ups.com or call 1-800-742-5877. UPS will investigate and can often recover lost packages or initiate a claims process with the shipper.</p>
+          </details>
+
+          <details class="bg-white rounded-2xl border border-gray-100 group" role="listitem">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none font-semibold text-dark hover:text-brand transition-colors list-none">
+              Can I change the delivery address on a UPS package?
+              <svg class="faq-chevron shrink-0 ml-4" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-gray-500 leading-[1.7]">Yes, through UPS My Choice you can redirect a package to a different address, reroute it to a UPS Access Point location, or request that the driver hold it for a later delivery date. The shipper must have enabled these options when creating the shipment. Address changes sometimes incur a fee and are subject to UPS approval. Importantly, changes must be made before the package is already loaded for delivery (i.e., before "Out for Delivery" status appears).</p>
+          </details>
+
+          <details class="bg-white rounded-2xl border border-gray-100 group" role="listitem">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none font-semibold text-dark hover:text-brand transition-colors list-none">
+              What is UPS SurePost and how does it differ from regular UPS Ground?
+              <svg class="faq-chevron shrink-0 ml-4" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-gray-500 leading-[1.7]">UPS SurePost is a hybrid service where UPS handles bulk transit to a local USPS facility, and the United States Postal Service completes final-mile delivery. It's considerably cheaper than UPS Ground and is popular with high-volume e-commerce shippers sending lightweight packages. The trade-off is that it typically adds 1–2 days to delivery time compared to UPS Ground, and once transferred to USPS, final tracking updates come from USPS rather than UPS.</p>
+          </details>
+
+          <details class="bg-white rounded-2xl border border-gray-100 group" role="listitem">
+            <summary class="flex items-center justify-between px-6 py-4 cursor-pointer select-none font-semibold text-dark hover:text-brand transition-colors list-none">
+              How long does UPS hold a package at a UPS Access Point?
+              <svg class="faq-chevron shrink-0 ml-4" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <p class="px-6 pb-5 text-gray-500 leading-[1.7]">UPS holds packages at Access Point locations — such as retail stores, pharmacies, or The UPS Store locations — for 7 calendar days. After that, the package is returned to the shipper. UPS sends notifications (email or SMS) as the hold period approaches its end, giving you time to pick up before it's returned. Bring a government-issued photo ID and your tracking number when collecting your package.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Carriers -->
+    <section class="bg-white py-16 md:py-20" aria-labelledby="other-carriers-heading">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <h2 id="other-carriers-heading" class="font-display text-3xl font-bold text-dark tracking-tight mb-3">
+            Track Other Carriers
+          </h2>
+          <p class="text-gray-500">TrackHive works for all major shipping carriers.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+          <a href="usps.html" class="group bg-surface rounded-2xl border border-gray-100 p-6 shadow-card-hover flex items-center gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2" aria-label="Track a USPS package">
+            <div class="w-14 h-9 bg-[#004B87] rounded-xl flex items-center justify-center shrink-0" aria-hidden="true">
+              <span class="text-white text-xs font-black tracking-widest">USPS</span>
+            </div>
+            <div>
+              <p class="font-semibold text-dark group-hover:text-brand transition-colors">Track USPS</p>
+              <p class="text-xs text-gray-400 mt-0.5">United States Postal Service</p>
+            </div>
+            <svg class="ml-auto text-gray-300 group-hover:text-brand transition-colors" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M13 8L9.5 4M13 8L9.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+
+          <a href="fedex.html" class="group bg-surface rounded-2xl border border-gray-100 p-6 shadow-card-hover flex items-center gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2" aria-label="Track a FedEx package">
+            <div class="w-14 h-9 rounded-xl overflow-hidden flex shrink-0" aria-hidden="true">
+              <div class="flex-1 bg-[#4D148C] flex items-center justify-center"><span class="text-white text-xs font-black">Fed</span></div>
+              <div class="flex-1 bg-[#FF6200] flex items-center justify-center"><span class="text-white text-xs font-black">Ex</span></div>
+            </div>
+            <div>
+              <p class="font-semibold text-dark group-hover:text-brand transition-colors">Track FedEx</p>
+              <p class="text-xs text-gray-400 mt-0.5">Federal Express</p>
+            </div>
+            <svg class="ml-auto text-gray-300 group-hover:text-brand transition-colors" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M13 8L9.5 4M13 8L9.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+
+          <a href="dhl.html" class="group bg-surface rounded-2xl border border-gray-100 p-6 shadow-card-hover flex items-center gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2" aria-label="Track a DHL package">
+            <div class="w-14 h-9 bg-[#FFCC00] rounded-xl flex items-center justify-center shrink-0" aria-hidden="true">
+              <span class="text-[#D40511] text-xs font-black tracking-widest">DHL</span>
+            </div>
+            <div>
+              <p class="font-semibold text-dark group-hover:text-brand transition-colors">Track DHL</p>
+              <p class="text-xs text-gray-400 mt-0.5">DHL Express &amp; eCommerce</p>
+            </div>
+            <svg class="ml-auto text-gray-300 group-hover:text-brand transition-colors" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M13 8L9.5 4M13 8L9.5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="bg-brand py-16 relative overflow-hidden" aria-labelledby="cta-heading">
+      <div class="absolute inset-0 opacity-[0.07] pointer-events-none" aria-hidden="true">
+        <svg width="100%" height="100%" viewBox="0 0 400 200" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="hexPat" x="0" y="0" width="40" height="46.19" patternUnits="userSpaceOnUse">
+              <polygon points="20,1 39,12 39,34 20,45 1,34 1,12" fill="none" stroke="white" stroke-width="1.2"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hexPat)"/>
+        </svg>
+      </div>
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
+        <h2 id="cta-heading" class="font-display text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
+          Track your UPS package now.
+        </h2>
+        <p class="text-brand-100 text-lg mb-8 opacity-90">Free forever. No account required. Opens directly on UPS.com.</p>
+        <a href="#track" class="lift inline-flex items-center gap-2.5 bg-white text-brand font-semibold text-base px-8 py-4 rounded-xl hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand">
+          Track a UPS Package — Free
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M13 8L9.5 4M13 8L9.5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-gray-400 pt-12 pb-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-white/10">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2.5 mb-4">
+            <div class="w-10 h-10 hex bg-brand flex items-center justify-center" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M2 12L6 7.5L9.5 10.5L14 4" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="4" r="2" fill="white"/></svg>
+            </div>
+            <span class="font-display font-semibold text-xl text-white">TrackHive</span>
+          </div>
+          <p class="text-gray-400 leading-relaxed text-sm max-w-xs">Free package tracking for USPS, FedEx, UPS, and DHL. Track single or bulk shipments instantly — no account required.</p>
+        </div>
+        <nav aria-label="Track packages">
+          <h3 class="text-white font-semibold text-sm mb-4">Track Packages</h3>
+          <ul class="space-y-2.5">
+            <li><a href="usps.html"       class="text-sm hover:text-white transition-colors">Track USPS Package</a></li>
+            <li><a href="fedex.html"      class="text-sm hover:text-white transition-colors">Track FedEx Package</a></li>
+            <li><a href="ups.html"        class="text-sm text-white font-medium">Track UPS Package</a></li>
+            <li><a href="dhl.html"        class="text-sm hover:text-white transition-colors">Track DHL Package</a></li>
+            <li><a href="index.html#bulk" class="text-sm hover:text-white transition-colors">Bulk Track Packages</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Resources">
+          <h3 class="text-white font-semibold text-sm mb-4">Resources</h3>
+          <ul class="space-y-2.5">
+            <li><a href="#faq"            class="text-sm hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="index.html"      class="text-sm hover:text-white transition-colors">All Carriers</a></li>
+            <li><a href="index.html#bulk" class="text-sm hover:text-white transition-colors">Bulk Tracking</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-8">
+        <p class="text-xs text-gray-500">&copy; 2024 TrackHive. All rights reserved.</p>
+        <p class="text-xs text-gray-500">TrackHive is not affiliated with USPS, FedEx, UPS, or DHL.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>const PAGE_CARRIER = 'ups';</script>
+  <script>
+    const CARRIERS = {
+      ups:   { name:'UPS',   badgeBg:'#351C15', badgeText:'#FFB500', detect: n => /^1Z[A-Z0-9]{16}$/i.test(n)||/^T\d{10}$/.test(n)||/^\d{9}$/.test(n), url: n=>`https://www.ups.com/track?tracknum=${n}` },
+      usps:  { name:'USPS',  badgeBg:'#004B87', badgeText:'#ffffff', detect: n => /^9[0-9]{19,21}$/.test(n)||/^[A-Z]{2}\d{9}US$/i.test(n)||/^(82|03|23)\d{8}$/.test(n), url: n=>`https://tools.usps.com/go/TrackConfirmAction?tLabels=${n}` },
+      fedex: { name:'FedEx', badgeBg:'#4D148C', badgeText:'#ffffff', detect: n => /^\d{12}$/.test(n)||/^\d{15}$/.test(n)||/^\d{20}$/.test(n)||/^\d{22}$/.test(n)||/^96\d{20}$/.test(n), url: n=>`https://www.fedex.com/fedextrack/?trknbr=${n}` },
+      dhl:   { name:'DHL',   badgeBg:'#FFCC00', badgeText:'#D40511', detect: n => /^\d{10,11}$/.test(n)||/^JD\d{18}$/.test(n)||/^[A-Z]{2}\d{9}[A-Z]{2}$/i.test(n), url: n=>`https://www.dhl.com/us-en/home/tracking/tracking-freight.html?submit=1&tracking-id=${n}` },
+    };
+    function detectCarrier(raw) {
+      const n = raw.replace(/[\s\-]/g,'').toUpperCase();
+      if (!n) return null;
+      for (const [key,c] of Object.entries(CARRIERS)) { if (c.detect(n)) return {...c,key,cleanNum:n}; }
+      return null;
+    }
+    function resultCard(raw, carrier, fallback) {
+      const clean = raw.replace(/[\s\-]/g,'').toUpperCase()||raw;
+      if (!carrier && !fallback) return `<div class="fade-up bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700 font-medium">Carrier not recognized for <code class="font-mono">${clean}</code> — check the number is complete.</div>`;
+      const c = carrier || fallback;
+      return `<div class="fade-up bg-white rounded-xl border border-gray-100 shadow-card overflow-hidden">
+        <div class="flex items-center justify-between px-5 py-4 gap-3">
+          <div class="flex items-center gap-3 min-w-0">
+            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold shrink-0" style="background:${c.badgeBg};color:${c.badgeText}">${c.name}</span>
+            <code class="text-sm font-mono text-gray-700 truncate">${clean}</code>
+          </div>
+          <a href="${c.url(clean)}" target="_blank" rel="noopener noreferrer" class="lift inline-flex items-center gap-1.5 bg-brand text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-brand-600 shrink-0">
+            Track <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 9.5L9.5 2.5M5 2.5H9.5V7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>`;
+    }
+    function loadingCard(cleanNum, carrier) {
+      return `<div class="fade-up bg-white rounded-xl border border-gray-100 shadow-card overflow-hidden">
+        <div class="px-5 py-4 flex items-center gap-3 border-b border-gray-100">
+          <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold shrink-0" style="background:${carrier.badgeBg};color:${carrier.badgeText}">${carrier.name}</span>
+          <code class="text-sm font-mono text-gray-700">${cleanNum}</code>
+          <span class="ml-auto text-xs text-gray-400 animate-pulse">Looking up tracking…</span>
+        </div>
+        <div class="px-5 py-5 space-y-3 animate-pulse">
+          <div class="h-6 bg-gray-100 rounded-lg w-2/3"></div>
+          <div class="h-4 bg-gray-100 rounded w-full"></div>
+          <div class="h-4 bg-gray-100 rounded w-3/4"></div>
+        </div>
+      </div>`;
+    }
+    function trackingCard(data, carrierObj) {
+      const SC = {
+        delivered:{bg:'#DCFCE7',text:'#15803D',label:'Delivered'},
+        out_for_delivery:{bg:'#FEF9C3',text:'#B45309',label:'Out for Delivery'},
+        in_transit:{bg:'#DBEAFE',text:'#1D4ED8',label:'In Transit'},
+        pre_shipment:{bg:'#F3F4F6',text:'#374151',label:'Pre-Shipment'},
+        exception:{bg:'#FEE2E2',text:'#B91C1C',label:'Exception / Alert'},
+      };
+      const sc=SC[data.statusCategory]||SC.in_transit;
+      const events=(data.events||[]).slice(0,10);
+      const eventsHTML=events.map((ev,i)=>`
+        <div class="flex gap-3 ${i<events.length-1?'pb-4':''}">
+          <div class="flex flex-col items-center shrink-0">
+            <div class="w-2.5 h-2.5 rounded-full mt-1 ${i===0?'bg-brand':'bg-gray-200'}"></div>
+            ${i<events.length-1?'<div class="w-px bg-gray-100 flex-1 mt-1"></div>':''}
+          </div>
+          <div class="pb-1 min-w-0">
+            <p class="text-sm font-medium text-dark leading-snug">${ev.description||''}</p>
+            ${ev.location?`<p class="text-xs text-gray-400 mt-0.5">${ev.location}</p>`:''}
+            ${ev.timestamp?`<p class="text-xs text-gray-400">${ev.timestamp}</p>`:''}
+          </div>
+        </div>`).join('');
+      return `<div class="fade-up bg-white rounded-xl border border-gray-100 shadow-card overflow-hidden">
+        <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between gap-3 flex-wrap">
+          <div class="flex items-center gap-3 min-w-0">
+            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-bold shrink-0" style="background:${carrierObj.badgeBg};color:${carrierObj.badgeText}">${carrierObj.name}</span>
+            <code class="text-sm font-mono text-gray-700 truncate">${data.trackingNumber}</code>
+          </div>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold shrink-0" style="background:${sc.bg};color:${sc.text}">${sc.label}</span>
+        </div>
+        <div class="px-5 py-4 border-b border-gray-100">
+          <p class="text-sm font-semibold text-dark">${data.summary||''}</p>
+          ${data.estimatedDelivery?`<p class="text-xs text-gray-400 mt-1">Estimated delivery: <span class="font-medium text-gray-600">${data.estimatedDelivery}</span></p>`:''}
+          ${data.service?`<p class="text-xs text-gray-400 mt-0.5">Service: ${data.service}</p>`:''}
+        </div>
+        ${eventsHTML?`<div class="px-5 py-4 max-h-72 overflow-y-auto">${eventsHTML}</div>`:''}
+        <div class="px-5 py-3 bg-gray-50 border-t border-gray-100">
+          <a href="${carrierObj.url(data.trackingNumber)}" target="_blank" rel="noopener noreferrer" class="text-xs text-brand hover:underline">View on ${carrierObj.name} website →</a>
+        </div>
+      </div>`;
+    }
+    function errorCard(message, cleanNum, carrierObj) {
+      return `<div class="fade-up bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3" role="alert">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="shrink-0 mt-0.5"><circle cx="9" cy="9" r="8" stroke="#DC2626" stroke-width="1.5"/><path d="M9 5v5M9 13h.01" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div>
+          <p class="text-sm font-semibold text-red-700">Tracking lookup failed</p>
+          <p class="text-xs text-red-500 mt-0.5">${message}</p>
+          ${carrierObj?`<a href="${carrierObj.url(cleanNum)}" target="_blank" rel="noopener noreferrer" class="text-xs text-brand hover:underline mt-1.5 inline-block">Try on ${carrierObj.name} website →</a>`:''}
+        </div>
+      </div>`;
+    }
+    const trackForm=document.getElementById('track-form'),trackInput=document.getElementById('tracking-input'),carrierHint=document.getElementById('carrier-hint'),trackResults=document.getElementById('track-results');
+    trackInput.addEventListener('input',()=>{
+      const v=trackInput.value.trim();
+      if(!v){carrierHint.textContent='Enter your tracking number above';carrierHint.className='mt-3 text-sm text-gray-400 h-5';return;}
+      const c=detectCarrier(v);
+      if(c){carrierHint.textContent=`✓ Detected: ${c.name}`;carrierHint.className='mt-3 text-sm font-semibold text-brand h-5';}
+      else if(v.replace(/[\s\-]/g,'').length>=8){carrierHint.textContent='Carrier not yet recognized — keep typing or check the number';carrierHint.className='mt-3 text-sm text-amber-500 h-5';}
+      else{carrierHint.textContent='Enter your tracking number above';carrierHint.className='mt-3 text-sm text-gray-400 h-5';}
+    });
+    trackForm.addEventListener('submit', e=>{
+      e.preventDefault();
+      const v=trackInput.value.trim();if(!v)return;
+      const clean=v.replace(/[\s\-]/g,'').toUpperCase();
+      const detected=detectCarrier(v);
+      const fallback=CARRIERS[PAGE_CARRIER];
+      const useCarrier=detected||{...fallback,key:PAGE_CARRIER,cleanNum:clean};
+      window.open(useCarrier.url(clean),'_blank','noopener,noreferrer');
+      trackResults.innerHTML=resultCard(v,detected,detected?null:{...fallback,key:PAGE_CARRIER,cleanNum:clean});
+      trackResults.classList.remove('hidden');
+      trackResults.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+    const menuBtn=document.getElementById('menu-btn'),mobileMenu=document.getElementById('mobile-menu'),iconO=document.getElementById('menu-icon-open'),iconC=document.getElementById('menu-icon-close');
+    let open=false;
+    function toggleMenu(f){open=f!==undefined?f:!open;mobileMenu.classList.toggle('open',open);iconO.classList.toggle('hidden',open);iconC.classList.toggle('hidden',!open);menuBtn.setAttribute('aria-expanded',String(open));}
+    // Bulk tracking
+    const bulkBtn = document.getElementById('bulk-track-btn');
+    const bulkInput = document.getElementById('bulk-input');
+    const bulkResults = document.getElementById('bulk-results');
+    bulkBtn.addEventListener('click', () => {
+      const lines = bulkInput.value.split('\n').map(l=>l.trim()).filter(l=>l.replace(/[\s\-]/g,'').length>=6);
+      if (!lines.length) {
+        bulkResults.innerHTML='<p class="text-sm text-center text-red-500 py-2">Please enter at least one tracking number.</p>';
+        bulkResults.classList.remove('hidden'); return;
+      }
+      const batch = lines.slice(0,20);
+      const cards = batch.map(num => resultCard(num, detectCarrier(num), null)).join('');
+      const extra = lines.length>20 ? `<p class="text-xs text-amber-500 text-center pt-1">Showing first 20 of ${lines.length} numbers.</p>` : '';
+      bulkResults.innerHTML=`<p class="text-xs text-gray-400 font-medium pb-1">${batch.length} package${batch.length!==1?'s':''} found:</p>${cards}${extra}`;
+      bulkResults.classList.remove('hidden');
+    });
+
+    menuBtn.addEventListener('click',()=>toggleMenu());
+    mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&open)toggleMenu(false);});
+  </script>
+
+</body>
+</html>
