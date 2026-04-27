@@ -127,23 +127,20 @@ const server = createServer(async (req, res) => {
   const safePath = normalize(filePath).replace(/^(\.\.[\\/])+/, '');
   const absPath = join(__dirname, safePath);
 
-  try {
-    await stat(absPath);
-    const data = await readFile(absPath);
-    const ext  = extname(absPath).toLowerCase();
-    res.writeHead(200, { 'Content-Type': MIME[ext] || 'text/plain' });
+  const tryServe = async (p) => {
+    const data = await readFile(p);
+    const ext  = extname(p).toLowerCase();
+    res.writeHead(200, { 'Content-Type': MIME[ext] || 'text/html; charset=utf-8' });
     res.end(data);
-  } catch {
-    try {
-      const htmlPath = absPath + '.html';
-      const data = await readFile(htmlPath);
-      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-      res.end(data);
-    } catch {
-      res.writeHead(404, { 'Content-Type': 'text/plain' });
-      res.end('404 Not Found');
-    }
-  }
+    return true;
+  };
+
+  try { await tryServe(absPath); return; } catch {}
+  try { await tryServe(absPath + '.html'); return; } catch {}
+  try { await tryServe(join(absPath, 'index.html')); return; } catch {}
+
+  res.writeHead(404, { 'Content-Type': 'text/plain' });
+  res.end('404 Not Found');
 });
 
 server.listen(PORT, () => {
