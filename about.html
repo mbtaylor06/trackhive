@@ -22,6 +22,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- hCaptcha -->
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -246,22 +249,71 @@
       </div>
     </section>
 
-    <!-- Contact / CTA -->
-    <section class="bg-white py-16 md:py-24">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-dark tracking-tight mb-5">Get in touch</h2>
-        <p class="text-gray-500 text-lg leading-[1.7] mb-8 max-w-xl mx-auto">
-          Have a question, found a bug, or want to suggest a feature? We'd love to hear from you. TrackHive is built and maintained by a small team that genuinely reads every message.
-        </p>
-        <a href="https://github.com/mbtaylor06/trackhive/issues" target="_blank" rel="noopener" class="lift inline-flex items-center gap-2 bg-brand text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 text-base">
-          Open an issue on GitHub
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 9.5L9.5 2.5M5 2.5H9.5V7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <p class="mt-5 text-sm text-gray-400">Or start tracking — it's free and instant.</p>
-        <a href="/" class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:underline">
-          Go to TrackHive
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 6.5h8M10.5 6.5L7.5 3.5M10.5 6.5L7.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+    <!-- Contact Form -->
+    <section class="bg-white py-16 md:py-24" id="contact">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-dark tracking-tight mb-4">Get in touch</h2>
+          <p class="text-gray-500 text-lg leading-[1.7]">
+            Have a question, found a bug, or want to suggest a feature? Send us a message and we'll get back to you.
+          </p>
+        </div>
+
+        <div class="bg-surface rounded-2xl border border-gray-100 p-8" style="box-shadow:0 1px 2px rgba(12,21,39,.04),0 4px 16px rgba(12,21,39,.07),0 12px 40px rgba(26,84,214,.05);">
+          <form id="contact-form" novalidate>
+            <!-- Web3Forms access key — replace with your key from web3forms.com -->
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+            <input type="hidden" name="subject" value="TrackHive Contact Form">
+            <!-- Honeypot -->
+            <input type="checkbox" name="botcheck" style="display:none">
+
+            <div class="space-y-5">
+              <div>
+                <label for="cf-name" class="block text-sm font-semibold text-dark mb-1.5">Name</label>
+                <input type="text" id="cf-name" name="name" required autocomplete="name"
+                  class="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-dark text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand/40 transition-colors"
+                  placeholder="Your name">
+              </div>
+
+              <div>
+                <label for="cf-email" class="block text-sm font-semibold text-dark mb-1.5">Email</label>
+                <input type="email" id="cf-email" name="email" required autocomplete="email"
+                  class="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-dark text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand/40 transition-colors"
+                  placeholder="you@example.com">
+              </div>
+
+              <div>
+                <label for="cf-message" class="block text-sm font-semibold text-dark mb-1.5">Message</label>
+                <textarea id="cf-message" name="message" required rows="5"
+                  class="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-dark text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand/40 transition-colors resize-none"
+                  placeholder="What's on your mind?"></textarea>
+              </div>
+
+              <!-- hCaptcha — replace data-sitekey with your key from hcaptcha.com -->
+              <div class="h-captcha" data-sitekey="YOUR_HCAPTCHA_SITE_KEY"></div>
+
+              <button type="submit" id="cf-submit"
+                class="lift w-full inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold py-3.5 rounded-xl hover:bg-brand-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 transition-colors">
+                Send Message
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- Success state -->
+          <div id="cf-success" class="hidden text-center py-6">
+            <div class="w-14 h-14 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-4">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" fill="#DCFCE7"/><path d="M8 14.5L12 18.5L20 10.5" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="font-display font-semibold text-xl text-dark mb-2">Message sent!</h3>
+            <p class="text-gray-500 text-sm">Thanks for reaching out. We'll get back to you soon.</p>
+          </div>
+
+          <!-- Error state -->
+          <div id="cf-error" class="hidden mt-4 bg-red-50 border border-red-200 rounded-xl px-5 py-4 text-sm text-red-700">
+            Something went wrong. Please try again or check your connection.
+          </div>
+        </div>
       </div>
     </section>
 
@@ -307,12 +359,43 @@
   </footer>
 
   <script>
+    // Mobile menu
     const menuBtn=document.getElementById('menu-btn'),mobileMenu=document.getElementById('mobile-menu'),iconO=document.getElementById('menu-icon-open'),iconC=document.getElementById('menu-icon-close');
     let open=false;
     function toggleMenu(f){open=f!==undefined?f:!open;mobileMenu.classList.toggle('open',open);iconO.classList.toggle('hidden',open);iconC.classList.toggle('hidden',!open);menuBtn.setAttribute('aria-expanded',String(open));}
     menuBtn.addEventListener('click',()=>toggleMenu());
     mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
     document.addEventListener('keydown',e=>{if(e.key==='Escape'&&open)toggleMenu(false);});
+
+    // Contact form
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('cf-submit');
+      const errEl = document.getElementById('cf-error');
+      errEl.classList.add('hidden');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      const data = Object.fromEntries(new FormData(this));
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const json = await res.json();
+        if (json.success) {
+          this.classList.add('hidden');
+          document.getElementById('cf-success').classList.remove('hidden');
+        } else {
+          throw new Error(json.message || 'Submit failed');
+        }
+      } catch(err) {
+        errEl.classList.remove('hidden');
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      }
+    });
   </script>
 </body>
 </html>
