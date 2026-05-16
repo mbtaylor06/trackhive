@@ -373,10 +373,21 @@
       const btn = document.getElementById('cf-submit');
       const errEl = document.getElementById('cf-error');
       errEl.classList.add('hidden');
+
+      // Check hCaptcha completed
+      const captchaResponse = hcaptcha.getResponse();
+      if (!captchaResponse) {
+        errEl.textContent = 'Please complete the CAPTCHA before submitting.';
+        errEl.classList.remove('hidden');
+        return;
+      }
+
       btn.disabled = true;
       btn.textContent = 'Sending…';
 
-      const data = Object.fromEntries(new FormData(this));
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+
       try {
         const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
@@ -388,10 +399,16 @@
           this.classList.add('hidden');
           document.getElementById('cf-success').classList.remove('hidden');
         } else {
-          throw new Error(json.message || 'Submit failed');
+          errEl.textContent = json.message || 'Submission failed. Please try again.';
+          errEl.classList.remove('hidden');
+          hcaptcha.reset();
+          btn.disabled = false;
+          btn.textContent = 'Send Message';
         }
       } catch(err) {
+        errEl.textContent = 'Network error. Please check your connection and try again.';
         errEl.classList.remove('hidden');
+        hcaptcha.reset();
         btn.disabled = false;
         btn.textContent = 'Send Message';
       }
